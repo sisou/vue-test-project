@@ -1,0 +1,4 @@
+[submodule "lib/iqons"]
+	path = lib/iqons
+	url = https://github.com/nimiq/iqons
+	branch = master
