@@ -26,4 +26,4 @@ new Vue({
     store
 }).$mount('#app')
 
-setTimeout(() => store.commit('updateMsg', 'And you, Max!'), 1000)
+setTimeout(() => store.commit('updateMsg', 'Welcome to your Vue.js App, everybody!'), 1000)
