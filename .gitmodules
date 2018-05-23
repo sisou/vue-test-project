@@ -2,3 +2,7 @@
 	path = lib/iqons
 	url = https://github.com/nimiq/iqons
 	branch = master
+[submodule "lib/nimiq-style"]
+	path = lib/nimiq-style
+	url = https://github.com/nimiq/nimiq-style
+	branch = master

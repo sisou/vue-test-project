@@ -11,15 +11,47 @@ Vue.config.productionTip = false
 const store = new Vuex.Store({
     state: {
         msg: 'Welcome to your Vue.js App!',
-        address: 'NQ46 6H5E CQUE B4RB J0RL FD0Q SDAV FV2T 80KG',
+        address: 'NQ02 2Q42 7BVN F9NN RJE7 JLMP FKVC B00J THFD',
         accounts: {
             hasAccounts: true,
-            entries: new Map().set('NQ21 6MVD 8URR ADXD 2R2C VAJR 649R A54X 22J7', {
-                address: 'NQ21 6MVD 8URR ADXD 2R2C VAJR 649R A54X 22J7',
-                balance: 96488.74608,
-                label: 'Pilzkopf',
-                type: 1
-            })
+            entries: {
+                'NQ02 2Q42 7BVN F9NN RJE7 JLMP FKVC B00J THFD': {
+                    address: 'NQ02 2Q42 7BVN F9NN RJE7 JLMP FKVC B00J THFD',
+                    label: 'Activation Account',
+                    balance: 276872,
+                    type: 1
+                },
+                'NQ57 2CTN 72AK GR4K P6FC 46HS SRPU MTF3 0AXF': {
+                    address: 'NQ57 2CTN 72AK GR4K P6FC 46HS SRPU MTF3 0AXF',
+                    label: 'Vesting Account',
+                    balance: 0,
+                    type: 1
+                },
+                'NQ77 X5GR VCE5 AQYB J3YJ VE7V 15L2 8EXY ECYU': {
+                    address: 'NQ77 X5GR VCE5 AQYB J3YJ VE7V 15L2 8EXY ECYU',
+                    label: 'Vesting Contract 1',
+                    balance: 1500000,
+                    owner: 'NQ91 GN8V XQV1 M779 8U1A VAKN 2YR9 XLAV FM53',
+                    start: 1,
+                    stepAmount: 750000,
+                    stepBlocks: 129600,
+                    totalAmount: 1500000,
+                    type: 4,
+                    height: 11000
+                },
+                'NQ91 GN8V XQV1 M779 8U1A VAKN 2YR9 XLAV FM53': {
+                    address: 'NQ91 GN8V XQV1 M779 8U1A VAKN 2YR9 XLAV FM53',
+                    label: 'My Ledger',
+                    balance: 1000000,
+                    type: 3
+                },
+                'NQ06 1YLF KX34 E5DM 4Y7D 03JC 0PLE LRLQ 20UH': {
+                    address: 'NQ06 1YLF KX34 E5DM 4Y7D 03JC 0PLE LRLQ 20UH',
+                    label: 'Main Account',
+                    balance: 238.12432,
+                    type: 2
+                }
+            }
         }
     },
     mutations: {
@@ -39,16 +71,15 @@ new Vue({
 // Demo code
 
 const addresses = [
-    'NQ15 6VRE BGBN 6HCM VBYD N9E4 5X63 4D3K F8DX',
-    'NQ32 GBU4 GBAX 63RK A5T4 FB0S 1QDA QT18 S11M',
-    'NQ92 0RGS 0YGB MRY8 5MHM MBL2 HSP5 7N0U Y5C6',
-    'NQ73 CPNL VJSV LJSG X7YS BT8X 7JTS FS2K FHQH',
-    'NQ36 P00L 1N6T S3QL KJY8 6FH4 5XN4 DXY0 L7C8',
-    'NQ46 6H5E CQUE B4RB J0RL FD0Q SDAV FV2T 80KG'
+    'NQ57 2CTN 72AK GR4K P6FC 46HS SRPU MTF3 0AXF',
+    'NQ77 X5GR VCE5 AQYB J3YJ VE7V 15L2 8EXY ECYU',
+    'NQ91 GN8V XQV1 M779 8U1A VAKN 2YR9 XLAV FM53',
+    'NQ06 1YLF KX34 E5DM 4Y7D 03JC 0PLE LRLQ 20UH',
+    'NQ02 2Q42 7BVN F9NN RJE7 JLMP FKVC B00J THFD'
 ]
 
 setInterval(() => {
     const address = addresses.shift();
     store.commit('changeAddress', address);
     addresses.push(address);
-}, 1000)
+}, 2000)

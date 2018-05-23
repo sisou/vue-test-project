@@ -36,7 +36,6 @@ export default {
         width: 100%;
         min-width: 320px;
         max-width: 400px;
-        box-sizing: border-box;
         padding: 8px 16px;
         font-size: 14px;
         font-weight: 600;
