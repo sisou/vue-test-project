@@ -1,6 +1,7 @@
 <template>
     <div id="app">
         <Identicon :address="$store.state.address"/>
+        <Address :address="$store.state.address"/>
         <HelloWorld/>
     </div>
 </template>
@@ -8,12 +9,14 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import Identicon from './components/Identicon.vue'
+import Address from './components/Address.vue'
 
 export default {
     name: 'app',
     components: {
         HelloWorld,
-        Identicon
+        Identicon,
+        Address
     }
 }
 </script>
@@ -31,5 +34,9 @@ export default {
 .identicon {
     margin: auto;
     width: 160px;
+}
+
+.address {
+    margin: auto;
 }
 </style>
