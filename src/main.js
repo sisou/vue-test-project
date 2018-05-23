@@ -1,14 +1,17 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import AsyncComputed from 'vue-async-computed'
 import App from './App.vue'
 
 Vue.use(Vuex)
+Vue.use(AsyncComputed)
 
 Vue.config.productionTip = false
 
 const store = new Vuex.Store({
     state: {
-        msg: 'Welcome to your Vue.js App, Sören!'
+        msg: 'Welcome to your Vue.js App, Sören!',
+        address: 'NQ46 6H5E CQUE B4RB J0RL FD0Q SDAV FV2T 80KG'
     },
     mutations: {
         updateMsg (state, msg) {
