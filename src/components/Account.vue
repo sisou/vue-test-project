@@ -6,7 +6,7 @@
             <span class="label">{{ account.label }}</span>
             <Address :address="account.address"/>
             <div class="bottom">
-                <Amount>{{ account.balance }}</Amount>
+                <Amount :amount="account.balance"/>
             </div>
         </div>
     </div>
@@ -15,6 +15,7 @@
 <script>
 import Identicon from './Identicon.vue'
 import Address from './Address.vue'
+import Amount from './Amount.vue'
 
 export default {
     name: 'Account',
@@ -31,7 +32,8 @@ export default {
     },
     components: {
         Identicon,
-        Address
+        Address,
+        Amount
     }
 }
 </script>

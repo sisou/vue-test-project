@@ -52,6 +52,9 @@ const store = new Vuex.Store({
                     type: 2
                 }
             }
+        },
+        settings: {
+            showAllDecimals: false
         }
     },
     mutations: {
