@@ -1,6 +1,7 @@
 <template>
-    <div class="address" v-on:click.left="copy">
-        {{ address }}
+    <div class="address" v-on:click="copy">
+        <span>{{ address }}</span>
+        <div class="copied-cover">Copied!</div>
     </div>
 </template>
 
@@ -9,14 +10,21 @@ export default {
     name: 'Address',
     props: ['address'],
     methods: {
-        copy(event) {
+        copy() {
             const selection = window.getSelection();
             const range = document.createRange();
-            range.selectNodeContents(event.target);
+            range.selectNodeContents(this.$el.querySelector('span'));
             selection.removeAllRanges();
             selection.addRange(range);
-            document.execCommand('copy');
-            selection.removeAllRanges();
+
+            try {
+                document.execCommand('copy');
+                selection.removeAllRanges();
+                this.$el.classList.add('copied');
+                setTimeout(() => this.$el.classList.remove('copied'), 400);
+            } catch(e) {
+                console.error(e); // eslint-disable-line no-console
+            }
         }
     }
 }
@@ -24,6 +32,7 @@ export default {
 
 <style>
     .address {
+        position: relative;
         width: 100%;
         min-width: 320px;
         max-width: 400px;
@@ -38,5 +47,26 @@ export default {
 
     .address:hover {
         background: rgba(0, 0, 0, 0.2);
+    }
+
+    .address .copied-cover {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 8px 16px;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        text-align: center;
+        border-radius: 3px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s;
+    }
+
+    .address.copied .copied-cover {
+        opacity: 1;
     }
 </style>
