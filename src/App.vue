@@ -3,6 +3,9 @@
         <Identicon :address="address"/>
         <Address :address="address"/>
         <Account :account="account"/>
+        <div class="transactions-list">
+            <Transaction :transaction="transaction"/>
+        </div>
         <button v-on:click="toggleDecimals">Toggle decimals</button>
         <HelloWorld/>
     </div>
@@ -13,6 +16,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import Identicon from './components/Identicon.vue'
 import Address from './components/Address.vue'
 import Account from './components/Account.vue'
+import Transaction from './components/Transaction.vue'
 
 import { mapState } from 'vuex'
 
@@ -24,9 +28,14 @@ export default {
         account() {
             return this.accounts.entries[this.address]
         },
+        transaction() {
+            return this.transactions.entries[this.hash]
+        },
         ...mapState([
             'address',
-            'accounts'
+            'hash',
+            'accounts',
+            'transactions'
         ])
     },
     methods: {
@@ -38,7 +47,8 @@ export default {
         HelloWorld,
         Identicon,
         Address,
-        Account
+        Account,
+        Transaction
     }
 }
 </script>
@@ -66,20 +76,33 @@ body {
 }
 
 .identicon {
-    margin: auto;
     width: 160px;
 }
 
+.identicon,
 .address,
-.account {
+.account,
+.transactions-list {
     margin: auto;
 }
 
-.account {
+.account,
+.transactions-list {
     margin-top: 32px;
     margin-bottom: 32px;
 
     border-radius: 5px;
     box-shadow: 0 3px 18px -3px lightgray;
+}
+
+.transactions-list {
+    display: table;
+    width: 100%;
+    max-width: 865px;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: inherit;
 }
 </style>

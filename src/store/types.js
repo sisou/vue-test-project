@@ -1,5 +1,6 @@
 export const ROOT = {
-    UPDATE_ADDRESS: 'update-address'
+    UPDATE_ADDRESS: 'update-address',
+    UPDATE_HASH: 'update-hash'
 }
 
 export const ACCOUNTS = {
@@ -8,6 +9,14 @@ export const ACCOUNTS = {
     ADD_ACCOUNT: 'accounts/add-account',
     UPDATE_BALANCES: 'accounts/update-balances',
     UPDATE_LABEL: 'accounts/update-label'
+}
+
+export const TRANSACTIONS = {
+    // Mutations
+    ADD_TRANSACTIONS: 'transactions/add-transactions',
+    MARK_REMOVED: 'transactions/mark-removed',
+    REMOVE_TRANSACTIONS: 'transactions/remove-transactions',
+    UPDATE_BLOCK_HEIGHT: 'transactions/update-block-height'
 }
 
 export const SETTINGS = {

@@ -23,10 +23,21 @@ const addresses = [
     'NQ02 2Q42 7BVN F9NN RJE7 JLMP FKVC B00J THFD'
 ]
 
+const hashes = [
+    'hash_02',
+    'hash_03',
+    'hash_04',
+    'hash_01'
+]
+
 import { ROOT } from './store/types'
 
 setInterval(() => {
     const address = addresses.shift();
     store.commit(ROOT.UPDATE_ADDRESS, address);
     addresses.push(address);
+
+    const hash = hashes.shift();
+    store.commit(ROOT.UPDATE_HASH, hash);
+    hashes.push(hash);
 }, 2000)
