@@ -78,5 +78,8 @@ body {
 .account {
     margin-top: 32px;
     margin-bottom: 32px;
+
+    border-radius: 5px;
+    box-shadow: 0 3px 18px -3px lightgray;
 }
 </style>

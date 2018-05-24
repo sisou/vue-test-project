@@ -11,19 +11,19 @@ export default {
     props: ['address'],
     methods: {
         copy() {
-            const selection = window.getSelection();
-            const range = document.createRange();
-            range.selectNodeContents(this.$el.querySelector('span'));
-            selection.removeAllRanges();
-            selection.addRange(range);
+            const selection = window.getSelection()
+            const range = document.createRange()
+            range.selectNodeContents(this.$el.querySelector('span'))
+            selection.removeAllRanges()
+            selection.addRange(range)
 
             try {
-                document.execCommand('copy');
-                selection.removeAllRanges();
-                this.$el.classList.add('copied');
-                setTimeout(() => this.$el.classList.remove('copied'), 400);
+                document.execCommand('copy')
+                selection.removeAllRanges()
+                this.$el.classList.add('copied')
+                setTimeout(() => this.$el.classList.remove('copied'), 400)
             } catch(e) {
-                console.error(e); // eslint-disable-line no-console
+                console.error(e) // eslint-disable-line no-console
             }
         }
     }

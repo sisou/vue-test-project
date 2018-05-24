@@ -17,7 +17,7 @@ export default {
                 return Iqons.toDataUrl(this.address)
             },
             default() {
-                return Iqons.placeholderToDataUrl();
+                return Iqons.placeholderToDataUrl()
             }
         }
     }

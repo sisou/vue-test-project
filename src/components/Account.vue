@@ -48,9 +48,6 @@ export default {
         /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
         cursor: pointer;
         position: relative;
-
-        border-radius: 5px;
-        box-shadow: 0 3px 18px -3px lightgray;
     }
 
     .account .identicon {

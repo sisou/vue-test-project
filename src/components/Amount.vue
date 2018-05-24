@@ -14,10 +14,10 @@ export default {
     props: ['label', 'amount'],
     computed: {
         splitAmount() {
-            const value = Math.round((Number(this.amount) || 0) * 1e5) / 1e5;
+            const value = Math.round((Number(this.amount) || 0) * 1e5) / 1e5
 
-            const valueStr = value.toFixed(5);
-            let [i, d] = valueStr.split('.');
+            const valueStr = value.toFixed(5)
+            let [i, d] = valueStr.split('.')
 
             return {
                 integers: this._formatThousands(i),
@@ -40,11 +40,11 @@ export default {
     },
     methods: {
         _formatThousands(number, separator = ' ') {
-            let reversed = number.split('').reverse();
+            let reversed = number.split('').reverse()
             for(let i = 3; i < reversed.length; i += 4) {
-                reversed.splice(i, 0, separator);
+                reversed.splice(i, 0, separator)
             }
-            return reversed.reverse().join('');
+            return reversed.reverse().join('')
         }
     }
 }
