@@ -59,7 +59,7 @@ export default {
     .account .icon {
         display: block;
         position: absolute;
-        left: 70px;
+        left: 78px;
         top: 48px;
         width: 1.4em;
         height: 1.4em;
@@ -109,6 +109,8 @@ export default {
     }
 
     .account .address {
+        overflow: hidden;
+        text-overflow: ellipsis;
         pointer-events: none;
         padding: 0;
         min-width: auto;
@@ -127,7 +129,7 @@ export default {
         }
 
         .account .icon {
-            left: 66px;
+            left: 62px;
         }
 
         .account Amount {
