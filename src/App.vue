@@ -3,6 +3,7 @@
         <Identicon :address="address"/>
         <Address :address="address"/>
         <Account :account="account"/>
+        <button v-on:click="toggleDecimals">Toggle decimals</button>
         <HelloWorld/>
     </div>
 </template>
@@ -15,6 +16,8 @@ import Account from './components/Account.vue'
 
 import { mapState } from 'vuex'
 
+import { SETTINGS } from './store/types'
+
 export default {
     name: 'app',
     computed: {
@@ -25,6 +28,11 @@ export default {
             'address',
             'accounts'
         ])
+    },
+    methods: {
+        toggleDecimals() {
+            this.$store.dispatch(SETTINGS.TOGGLE_DECIMALS)
+        }
     },
     components: {
         HelloWorld,
